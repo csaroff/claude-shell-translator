@@ -15,13 +15,19 @@ find . -type f -name "*.json" -mmin -60
 
 ## Installation
 
-### Oh-My-Zsh
+### Quick Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/csaroff/ai-suggest/main/install.sh | bash
+```
+
+### Manual
 
 ```bash
 git clone https://github.com/csaroff/ai-suggest ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/ai-suggest
 ```
 
-Add to your `~/.zshrc`:
+Add `ai-suggest` to your plugins in `~/.zshrc`:
 
 ```zsh
 plugins=(... ai-suggest)
@@ -29,13 +35,13 @@ plugins=(... ai-suggest)
 
 Restart your shell or run `source ~/.zshrc`.
 
-### Manual
+## Uninstall
 
-Source the plugin directly in your `.zshrc`:
-
-```zsh
-source /path/to/ai-suggest.plugin.zsh
+```bash
+curl -fsSL https://raw.githubusercontent.com/csaroff/ai-suggest/main/uninstall.sh | bash
 ```
+
+Or manually remove `ai-suggest` from your plugins and delete the plugin directory.
 
 ## Usage
 
