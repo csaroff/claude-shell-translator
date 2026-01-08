@@ -1,6 +1,6 @@
 # claude-shell-translator
 
-Natural language to shell command for your terminal. Like Warp's AI feature, but for any terminal.
+Translate natural language to shell commands. Like Warp AI, but for any terminal.
 
 ```
 ❯ find all json files modified in the last hour
@@ -8,26 +8,45 @@ Natural language to shell command for your terminal. Like Warp's AI feature, but
 find . -type f -name "*.json" -mmin -60
 ```
 
+## How it works
+
+1. Press **Ctrl+X Ctrl+A** — enters AI prompt mode (shows `❯ `)
+2. Type what you want in plain English
+3. Press **Enter** — converts to a shell command
+4. Press **Escape** to cancel
+
+The command appears in your terminal ready to edit or run.
+
 ## Requirements
 
-- [Claude CLI](https://docs.anthropic.com/en/docs/claude-code) (`claude` command)
-- zsh (Oh-My-Zsh optional)
+- **zsh** (bash not supported)
+- **[Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code)** — the `claude` command
 
 ## Installation
 
-### Quick Install
+### Easiest: Append to your `.zshrc`
+
+Works with any zsh setup. Easy to inspect and customize:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/csaroff/claude-shell-translator/main/claude-shell-translator.plugin.zsh >> ~/.zshrc && source ~/.zshrc
+```
+
+### With Oh-My-Zsh
+
+**Option A:** Auto-install script
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/csaroff/claude-shell-translator/main/install.sh | bash
 ```
 
-### Manual
+**Option B:** Manual
 
 ```bash
 git clone https://github.com/csaroff/claude-shell-translator ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/claude-shell-translator
 ```
 
-Add `claude-shell-translator` to your plugins in `~/.zshrc`:
+Then add to your `~/.zshrc`:
 
 ```zsh
 plugins=(... claude-shell-translator)
@@ -35,51 +54,36 @@ plugins=(... claude-shell-translator)
 
 Restart your shell or run `source ~/.zshrc`.
 
-### Without Oh-My-Zsh
-
-Append directly to your `.zshrc` for easy editing:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/csaroff/claude-shell-translator/main/claude-shell-translator.plugin.zsh >> ~/.zshrc
-```
-
 ## Uninstall
+
+**Oh-My-Zsh users:**
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/csaroff/claude-shell-translator/main/uninstall.sh | bash
 ```
 
-Or manually remove `claude-shell-translator` from your plugins and delete the plugin directory.
-
-## Usage
-
-1. Press **Ctrl+X Ctrl+A** to enter AI mode (shows `❯ ` prompt)
-2. Type what you want to do in plain English
-3. Press **Enter** to convert to a shell command
-4. Press **Escape** to cancel
-
-The generated command appears in your buffer ready to edit or execute.
+**Everyone else:** Remove the plugin code from your `~/.zshrc`.
 
 ## Keybindings
 
 | Key | Action |
 |-----|--------|
-| `Ctrl+X Ctrl+A` | Enter AI prompt mode |
-| `Enter` | Submit query (in AI mode) |
-| `Escape` | Cancel (in AI mode) |
+| `Ctrl+X Ctrl+A` | Enter prompt mode |
+| `Enter` | Submit to AI |
+| `Escape` | Cancel |
 
-### Optional: Ctrl+` (like Warp)
+### Optional: Use Ctrl+\` (like Warp)
 
-To use `Ctrl+`` ` as the trigger, configure your terminal to send `0x00` for that key combo:
+Configure your terminal to send hex code `00` for `Ctrl+`` `:
 
-**iTerm2:** Preferences → Profiles → Keys → Key Mappings → Add `Ctrl+`` ` → Send Hex Code → `00`
+**iTerm2:** Settings → Profiles → Keys → Key Mappings → Add → Keyboard Shortcut: `Ctrl+`` ` → Action: Send Hex Code → `00`
 
 ## Configuration
 
-The plugin uses Claude Haiku for speed. To change the model, edit the plugin and modify:
+Uses Claude Haiku for speed. To change the model, edit the plugin:
 
 ```zsh
-claude --model haiku -p "..."
+claude --model sonnet -p "..."  # slower but smarter
 ```
 
 ## License
