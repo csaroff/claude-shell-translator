@@ -11,7 +11,7 @@ find . -type f -name "*.json" -mmin -60
 ## Requirements
 
 - [Claude CLI](https://docs.anthropic.com/en/docs/claude-code) (`claude` command)
-- zsh with Oh-My-Zsh (or compatible plugin manager)
+- zsh (Oh-My-Zsh optional)
 
 ## Installation
 
@@ -34,6 +34,14 @@ plugins=(... claude-shell-translator)
 ```
 
 Restart your shell or run `source ~/.zshrc`.
+
+### Without Oh-My-Zsh
+
+Append directly to your `.zshrc` for easy editing:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/csaroff/claude-shell-translator/main/claude-shell-translator.plugin.zsh >> ~/.zshrc
+```
 
 ## Uninstall
 
