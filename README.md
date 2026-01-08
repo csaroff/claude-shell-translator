@@ -1,4 +1,4 @@
-# ai-suggest
+# claude-shell-translator
 
 Natural language to shell command for your terminal. Like Warp's AI feature, but for any terminal.
 
@@ -18,19 +18,19 @@ find . -type f -name "*.json" -mmin -60
 ### Quick Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/csaroff/ai-suggest/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/csaroff/claude-shell-translator/main/install.sh | bash
 ```
 
 ### Manual
 
 ```bash
-git clone https://github.com/csaroff/ai-suggest ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/ai-suggest
+git clone https://github.com/csaroff/claude-shell-translator ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/claude-shell-translator
 ```
 
-Add `ai-suggest` to your plugins in `~/.zshrc`:
+Add `claude-shell-translator` to your plugins in `~/.zshrc`:
 
 ```zsh
-plugins=(... ai-suggest)
+plugins=(... claude-shell-translator)
 ```
 
 Restart your shell or run `source ~/.zshrc`.
@@ -38,10 +38,10 @@ Restart your shell or run `source ~/.zshrc`.
 ## Uninstall
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/csaroff/ai-suggest/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/csaroff/claude-shell-translator/main/uninstall.sh | bash
 ```
 
-Or manually remove `ai-suggest` from your plugins and delete the plugin directory.
+Or manually remove `claude-shell-translator` from your plugins and delete the plugin directory.
 
 ## Usage
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-PLUGIN_NAME="ai-suggest"
-REPO_URL="https://github.com/csaroff/ai-suggest"
+PLUGIN_NAME="claude-shell-translator"
+REPO_URL="https://github.com/csaroff/claude-shell-translator"
 
 # Colors
 RED='\033[0;31m'

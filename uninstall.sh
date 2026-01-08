@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-PLUGIN_NAME="ai-suggest"
+PLUGIN_NAME="claude-shell-translator"
 
 # Colors
 RED='\033[0;31m'
